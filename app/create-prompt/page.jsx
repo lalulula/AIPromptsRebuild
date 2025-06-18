@@ -3,12 +3,8 @@ import { useState } from "react";
 import { useSession } from "next-auth/react"; //which user is currently logged in
 import { useRouter } from "next/navigation";
 import Form from "@components/Form";
-import dynamic from "next/dynamic";
+// import Lottie from "lottie-react";
 import CreateAnimation from "../../public/assets/lottie/CreatePost.json";
-
-const Lottie = dynamic(() => import("lottie-react"), {
-  ssr: false,
-});
 const CreatePrompt = () => {
   const router = useRouter();
   const { data: session } = useSession();
@@ -49,7 +45,7 @@ const CreatePrompt = () => {
         submitting={submitting}
         handleSubmit={createPrompt}
       />
-      <Lottie animationData={CreateAnimation} style={style} />
+      {/* <Lottie animationData={CreateAnimation} style={style} /> */}
     </div>
   );
 };
